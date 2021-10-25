@@ -8,7 +8,7 @@ const app = express();
     // Pegar a minha collection
 
     
-    const url = "mongodb+srv://dbIntregrandoNuvem:VsD2uz8yivlbaKAb@cluster0.dyicv.mongodb.net ";
+    const url = "mongodb+srv://dbIntregrandoNuvem:EZqH6WAMr0VoxRbz@cluster0.dyicv.mongodb.net ";
     const dbName = "ocean_nuvem_25_10_2021";
     console.info("Conectando ao banco de dados MongoDB...");
     const client = await MongoClient.connect(url);
