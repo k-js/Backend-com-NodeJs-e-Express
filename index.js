@@ -17,8 +17,6 @@ const app = express();
     const collection = db.collection("herois");
     
 
-    const collection = undefined;
-
     app.use(express.json());
 
     // Endpoints de 'Hello'
