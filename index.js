@@ -9,16 +9,11 @@ const app = express();
 
     /*
     const url = "mongodb://localhost:27017";
-    const dbName = "ocean_bancodados_22_10_21";
-
+    const dbName = "ocean_bancodados_20_10_2021";
     console.info("Conectando ao banco de dados MongoDB...");
-
     const client = await MongoClient.connect(url);
-
     console.info("MongoDB conectado com sucesso.");
-
     const db = client.db(dbName);
-
     const collection = db.collection("herois");
     */
 
@@ -107,7 +102,7 @@ const app = express();
     // Endpoint de Update
 
     app.put("/herois/:id", async function (req, res) {
-        const id = +req.params.id;
+        const id = req.params.id;
 
         const itemAtual = await findById(id);
 
@@ -136,7 +131,7 @@ const app = express();
     // Endpoint de Delete
 
     app.delete("/herois/:id", async function (req, res) {
-        const id = +req.params.id;
+        const id = req.params.id;
 
         const item = await findById(id);
 
@@ -146,11 +141,11 @@ const app = express();
             // Return encerra a função
             return;
         }
-        
+
         await collection.deleteOne({ _id: ObjectId(id) });
-        
+
         res.send("Item removido com sucesso.");
     });
 
-    app.listen(porcess.env.PORT || 3000);
+    app.listen(process.env.PORT || 3000);
 })();
